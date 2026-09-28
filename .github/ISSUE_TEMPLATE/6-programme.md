@@ -15,6 +15,8 @@ type: Programme
 
 **Sequencing:** [Why the members are in this order, in at most two sentences. Delete this line if none.]
 
+Records: [.qe/](https://github.com/QuantEcon/[repository]/tree/main/.qe)
+
 ## Where we stand (verified YYYY-MM-DD)
 
 **Needs:** none

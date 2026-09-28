@@ -15,6 +15,8 @@ type: Project
 
 **Order:** [The sequencing principle, in one clause. Delete this line if none.]
 
+Records: [.qe/](https://github.com/QuantEcon/[repository]/tree/main/.qe)
+
 ## Where we stand (verified YYYY-MM-DD)
 
 **Needs:** none
