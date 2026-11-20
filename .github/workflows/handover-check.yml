@@ -1,0 +1,24 @@
+# Scratch copy of the handover step proposed for QuantEcon/cli's lint job
+# (QuantEcon/cli#148), to show it red and green. Not for merging.
+name: Handover check (scratch)
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - name: No handover file on the way to main
+        if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
+        run: |
+          if [ -e .qe/HANDOVER.md ]; then
+            echo "::error file=.qe/HANDOVER.md::delete .qe/HANDOVER.md before this pull request is marked ready"
+            exit 1
+          fi
